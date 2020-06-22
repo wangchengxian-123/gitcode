@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加员工</title>
+    <style>
+        form{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/user/save">
+    <h1>人员添加</h1>
+    <table border="1">
+       <tr>
+           <td>员工姓名</td>
+        <td><input type="text" name="name"></td>
+      </tr>
+        <tr>
+            <td>部门</td>
+            <td>
+                <select name="deptId">
+                   <option value="1">教学部</option>
+                    <option value="2">管理部</option>
+                    <option value="3">人事部</option>
+                    <option value="4">财务部</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>员工邮箱</td>
+            <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+            <td>员工电话</td>
+            <td><input type="text" name="phoneNum"></td>
+        </tr>
+        <tr>
+            <td>员工状态</td>
+            <td><input type="radio" name="status" value="1">正常<input type="radio" name="status" value="2">禁止</td>
+        </tr>
+        <tr>
+            <td>员工账号</td>
+            <td><input type="text" name="userName"></td>
+        </tr>
+        <tr>
+            <td>员工密码</td>
+            <td><input type="text" name="passWord"></td>
+        </tr>
+
+
+   </table>
+    <input type="submit" value="提交" id="btn">
+
+
+
+</form>
+</body>
+<!--<script src="/static/js/jquery-3.3.1.min.js"></script>-->
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$("#btn").onclick=function () {-->
+<!--alert(123);-->
+            <!--$.ajax({-->
+                <!--url:"/user/save",-->
+                <!--type:"post",-->
+                <!--data:{-->
+                    <!--"name":$("#name").val(),-->
+                    <!--"deptId":$("#deptId").val(),-->
+                    <!--"email":$("#email").val(),-->
+                    <!--"phoneNum":$("#phoneNum").val(),-->
+                    <!--"status":$("#status").val(),-->
+                    <!--"userName":$("#userName").val(),-->
+                    <!--"passWord":$("#passWord").val(),-->
+                <!--},-->
+                <!--dataType:"json",-->
+                <!--success:function (res) {-->
+
+                <!--}-->
+            <!--})-->
+        <!--}-->
+    <!--})-->
+<!--</script>-->
+</html>

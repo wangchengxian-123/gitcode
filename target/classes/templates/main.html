@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>员工列表</title>
+    <style>
+        *{
+            text-align: center;
+        }
+        table{
+         margin: auto;
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th>用户名</th>
+        <th>姓名</th>
+        <th>邮箱</th>
+        <th>电话号码</th>
+        <th>账号状态</th>
+        <th>部门名称</th>
+        <th>操作</th>
+    </tr>
+    <tr th:each="list:${user}">
+        <td th:text="${list.userName}"></td>
+        <td th:text="${list.name}"></td>
+        <td th:text="${list.email}"></td>
+        <td th:text="${list.phoneNum}"></td>
+        <td th:if="${list.status==1}">正常</td>
+        <td th:if="${list.status==2}">禁止</td>
+        <td th:text="${list.dName}"></td>
+        <td><a th:href="@{/user/del(userId=${list.userId})}">删除</a>
+            <a th:href="@{/user/upd(userId=${list.userId})}">修改</a>
+        </td>
+    </tr>
+</table>
+<form action="/user/queryByName" method="post">
+<input type="text" name="name"><input type="submit" value="查询">
+</form>
+<a href="/user/toAdd">添加</a>
+</body>
+</html>

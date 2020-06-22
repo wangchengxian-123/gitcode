@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>修改员工</title>
+    <style>
+        form{
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/user/updSave">
+    <!--<div th:each="list:${user}">-->
+    <div th:each="list:${user}">
+        姓名：<input th:value="${list.name}" name="name"></br>
+        用户名：<input th:value="${list.userName}" name="userName"></br>
+        邮箱：<input th:value="${list.email}" name="email"></br>
+        电话：<input th:value="${list.phoneNum}" name="phoneNum"></br>
+        密码：<input th:value="${list.passWord}" name="passWord"></br>
+        状态：<input th:value="${list.status}" name="status"></br>
+        部门id：<input th:value="${list.deptId}" name="deptId"></br>
+        编号：<input th:value="${list.userId}" readonly="readonly" name="userId"></br>
+
+
+
+
+
+
+    </div>
+
+
+    <input type="submit" value="提交" id="btn">
+
+
+
+</form>
+</body>
+<!--<script src="/static/js/jquery-3.3.1.min.js"></script>-->
+<!--<script>-->
+    <!--$(function () {-->
+        <!--$("#btn").onclick=function () {-->
+<!--alert(123);-->
+            <!--$.ajax({-->
+                <!--url:"/user/save",-->
+                <!--type:"post",-->
+                <!--data:{-->
+                    <!--"name":$("#name").val(),-->
+                    <!--"deptId":$("#deptId").val(),-->
+                    <!--"email":$("#email").val(),-->
+                    <!--"phoneNum":$("#phoneNum").val(),-->
+                    <!--"status":$("#status").val(),-->
+                    <!--"userName":$("#userName").val(),-->
+                    <!--"passWord":$("#passWord").val(),-->
+                <!--},-->
+                <!--dataType:"json",-->
+                <!--success:function (res) {-->
+
+                <!--}-->
+            <!--})-->
+        <!--}-->
+    <!--})-->
+<!--</script>-->
+</html>
